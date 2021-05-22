@@ -1,0 +1,42 @@
+
+
+#email
+#dataSource
+#thymeleaf
+#logProfile
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: xcon9999@gmail.com
+    password: fr**3**7**! #PASSWORD Required
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+  datasource:
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://127.0.0.1:3306/test
+    username: fintech
+    password: fintech
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    cache: false
+    check-template-location: true
+  profiles:
+    active: dev
+
+#mybatis.config-location=classpath:com/fintech/junit/mybatis/mybatis-config.xml
+mybatis:
+  type-aliases-package: com.myalley.junit.dao.dto
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:com/myalley/junit/dao/service/**/*Mapper.xml
+
+#server port
+server.port: 8091
